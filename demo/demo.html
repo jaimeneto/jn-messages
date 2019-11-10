@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>JnMessages | jaimeneto.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/jn-messages.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="demo.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>JnMessages</h1>
+        <span>&copy; jaimeneto.com</span>
+    </header>
+
+    <main>
+        <h2>JnMessageBox</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>wrapper</strong></td>
+                    <td>element id to wrap the messages</td>
+                </tr>
+                <tr>
+                    <td><strong>type</strong></td>
+                    <td>'default' | 'floating' | 'corner'</td>
+                </tr>
+                <tr>
+                    <td><strong>closable</strong></td>
+                    <td>true | false</td>
+                </tr>
+                <tr>
+                    <td><strong>counter</strong></td>
+                    <td>true | false</td>
+                </tr>
+                <tr>
+                    <td><strong>timeout</strong></td>
+                    <td>seconds to hide</td>
+                </tr>
+                <tr>
+                    <td><strong>max</strong></td>
+                    <td>limit of messages</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Functions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>setType(type)</strong></td>
+                    <td>Sets the message box type ('default' | 'floating' | 'corner').</td>
+                </tr>
+                <tr>
+                    <td><strong>show(text, type)</strong></td>
+                    <td>Shows a message of a defined type (default: 'alert').</td>
+                </tr>
+                <tr>
+                    <td><strong>alert(text)</strong></td>
+                    <td>Shows an alert message.</td>
+                </tr>
+                <tr>
+                    <td><strong>success(text)</strong></td>
+                    <td>Shows a success message.</td>
+                </tr>
+                <tr>
+                    <td><strong>error(text)</strong></td>
+                    <td>Shows an error message.</td>
+                </tr>
+                <tr>
+                    <td><strong>info(text)</strong></td>
+                    <td>Shows an info message.</td>
+                </tr>
+                <tr>
+                    <td><strong>setClosable(boolean)</strong></td>
+                    <td>Adds a 'X' button to messages, allowing them to be closed.</td>
+                </tr>
+                <tr>
+                    <td><strong>setCounter(boolean)</strong></td>
+                    <td>Adds a counter to messages that increments when the same messages of the same type are added again.</td>
+                </tr>
+                <tr>
+                    <td><strong>setTimeout(seconds)</strong></td>
+                    <td>Defines after how long the messages should be hidden</td>
+                </tr>
+                <tr>
+                    <td><strong>setMax(number)</strong></td>
+                    <td>Defines the limit of messages to be shown. If the max number it's reached and a new message is added, the first one will be hidden.</td>
+                </tr>
+                <tr>
+                    <td><strong>hideAll()</strong></td>
+                    <td>Hides all messages</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Examples</h3>
+
+        <h4>Default Messages</h4>
+        <div class="example">
+            <button type="button" class="alert" id="defaultAlertBtn">Alert</button>
+            <button type="button" class="success" id="defaultSuccessBtn">Success</button>
+            <button type="button" class="error" id="defaultErrorBtn">Error</button>
+            <button type="button" class="info" id="defaultInfoBtn">Info</button>
+            <button type="button" id="defaultClearBtn">Clear</button>
+            <div id="defaultMsgs"></div>
+        </div>
+        <pre>
+const defaultMsgs = new JnMessageBox({
+    wrapper: '#defaultMsgs', 
+    closable: true, 
+    max: 5
+});
+defaultMsgs.alert('This is an <b>alert</b> message!');
+defaultMsgs.success('This is a <b>success</b> message!');
+defaultMsgs.error('This is an <b>error</b> message!');
+defaultMsgs.info('This is an <b>info</b> message!');
+defaultMsgs.hideAll();
+        </pre>
+
+        <h4>Floating Messages</h4>
+        <div class="example">
+            <button type="button" class="alert" id="floatingAlertBtn">Alert</button>
+            <button type="button" class="success" id="floatingSuccessBtn">Success</button>
+            <button type="button" class="error" id="floatingErrorBtn">Error</button>
+            <button type="button" class="info" id="floatingInfoBtn">Info</button>
+            <button type="button" id="floatingAllBtn">Show All</button>
+            <div id="floatingMsgs"></div>
+        </div>
+        <pre>
+const floatingMsgs = new JnMessageBox({
+    wrapper: '#floatingMsgs', 
+    type: 'floating', 
+    closable: false, 
+    timeout: 5
+});
+floatingMsgs.alert('This is an <b>alert</b> floating message!');
+floatingMsgs.success('This is a <b>success</b> floating message!');
+floatingMsgs.error('This is an <b>error</b> floating message!');
+floatingMsgs.info('This is an <b>info</b> floating message!');
+        </pre>
+
+        <h4>Corner Messages</h4>
+        <div class="example">
+            <button type="button" class="alert" id="cornerAlertBtn">Alert</button>
+            <button type="button" class="success" id="cornerSuccessBtn">Success</button>
+            <button type="button" class="error" id="cornerErrorBtn">Error</button>
+            <button type="button" class="info" id="cornerInfoBtn">Info</button>
+            <button type="button" id="cornerClearBtn">Clear</button>
+            <div id="cornerMsgs"></div>
+        </div>
+        <pre>
+const cornerMsgs = new JnMessageBox({
+    wrapper: '#cornerMsgs', 
+    type: 'corner', 
+    closable: true,
+    counter: true, 
+    max: 3
+});
+cornerMsgs.alert('This is an <b>alert</b> corner message!');
+cornerMsgs.success('This is a <b>success</b> corner message!');
+cornerMsgs.error('This is an <b>error</b> corner message!');
+cornerMsgs.info('This is an <b>info</b> corner message!');
+        </pre>    
+
+        <h2>JnFixedMessages</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">Inherits all JnMessageBox options</td>
+                </tr>
+                <tr>
+                    <td><strong>fixedMessages</strong></td>
+                    <td>JSON containing a list of messages like {code1: text1, code2: text2}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Functions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">Inherits all JnMessageBox options</td>
+                </tr>
+                <tr>
+                    <td><strong>exists(code)</strong></td>
+                    <td>[static] Verifies if a code exists.</td>
+                </tr>
+                <tr>
+                    <td><strong>getFixedMessage(code)</strong></td>
+                    <td>[static] Retrieves a fixed message with a predefined code.</td>
+                </tr>
+                <tr>
+                    <td><strong>show(code, type)</strong></td>
+                    <td>Changes the JnMessageBox behaviour. Now the first parameter is the message code. If the code does not exists shows a "debug" message.</td>
+                </tr>
+                <tr>
+                    <td><strong>custom(text, type = 'alert')</strong></td>
+                    <td>Shows a custom message, without using the predefined codes, once the show() function is changed.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <h3>Examples</h3>
+
+        <div class="example">
+            <div id="fixedMsgs"></div>
+        </div>
+        <pre>
+const fixedMsgsJson = {
+    "MSA-001": "This is a <u>fixed</u> <b>alert</b> message!",
+    "MSS-001": "This is a <u>fixed</u> <b>success</b> message!",
+    "MSE-001": "This is a <u>fixed</u> <b>error</b> message!",
+    "MSI-001": "This is a <u>fixed</u> <b>info</b> message!"
+};
+const fixedMsgs = new JnFixedMessages({
+    wrapper: '#fixedMsgs', 
+    closable: false, 
+    fixedMessages: fixedMsgsJson
+});
+
+fixedMsgs.alert("MSA-001");
+fixedMsgs.success("MSS-001");
+fixedMsgs.error("MSE-001");
+fixedMsgs.info("MSI-001");
+fixedMsgs.custom("This is a custom message!", 'alert');
+fixedMsgs.info("INVALID");
+        </pre> 
+    </main>
+
+    <script src="../js/jn-messages.min.js"></script>
+    <script src="demo.js"></script>
+</body>
+</html>

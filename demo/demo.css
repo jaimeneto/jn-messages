@@ -1,0 +1,90 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding-top: 60px;
+}
+header {
+    background-color: #343a40;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1071;
+    color: #d6f6ff;
+    padding: 10px 20px;
+}
+header h1 {
+    display: inline-block;
+    margin: 0;
+}
+header span {
+    margin-top: 10px;
+    float: right;
+}
+button {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    display: inline-block;
+    font-weight: 400;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+button.alert {
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+}
+button.success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+}
+button.error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+}
+button.info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #3a87ad;
+}
+#floatingMsgs {
+    padding-top: 80px;
+}
+#defaultMsgs {
+    margin-top: 30px;
+}
+
+main {
+    margin: 0 50px;
+}
+
+div.example {
+    border: 2px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    padding: 1.5rem;
+}
+pre {
+    border-radius: 0 0 5px 5px;
+    background-color: #ccc;
+    padding: 1.5rem;
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table thead {
+    background: #ddd;
+}
+table td, table th {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+table tr td:first-child {
+    width: 200px;
+}
