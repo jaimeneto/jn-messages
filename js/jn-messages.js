@@ -1,7 +1,7 @@
 /*!
  * JnMessages v1.0.0 (https://github.com/jaimeneto/jn-messages)
  * Copyright 2019 Jaime Neto <jaimeneto.com>
- * Licensed under MIT (https://github.com/jaimeneto/jn-messages/master/LICENSE)
+ * Licensed under MIT (https://github.com/jaimeneto/jn-messages/blob/master/LICENSE)
  */
 
 /**
