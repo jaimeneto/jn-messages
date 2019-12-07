@@ -49,6 +49,15 @@ msgs.error('This is an <b>error</b> message!');
 msgs.info('This is an <b>info</b> message!');
 ```
 
+### Customising message options
+```
+msgs.alert({
+    text: 'This is a message with custom options!',
+    closable: false,
+    timeout: 3
+});
+```
+
 ### Hiding all the messages
 ```
 msgs.hideAll();
