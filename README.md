@@ -3,9 +3,9 @@ A Javascript / CSS tool to handle many kinds of messages
 
 ## Available Options
 - **wrapper**: element id to wrap the messages
-- **type**: 'default' | 'floating' | 'corner'
-- **closable**: true | false
-- **counter**: true | false
+- **type**: 'default', 'floating' or 'corner'
+- **closable**: true or false
+- **counter**: true or false
 - **timeout**: seconds to hide
 - **max**: limit of messages
 
