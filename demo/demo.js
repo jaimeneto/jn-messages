@@ -66,6 +66,9 @@ document.querySelector('#cornerErrorBtn').onclick = function() {
 document.querySelector('#cornerInfoBtn').onclick = function() {
     cornerMsgs.info('This is an <b>info</b> corner message!');
 };
+document.querySelector('#cornerCustomBtn').onclick = function() {
+    cornerMsgs.alert({text: 'This is a custom message, not closable and with timeout!', closable: false, timeout: 3});
+};
 document.querySelector('#cornerClearBtn').onclick = function() {
     cornerMsgs.hideAll();
 };

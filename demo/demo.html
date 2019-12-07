@@ -119,10 +119,10 @@ const defaultMsgs = new JnMessageBox({
     closable: true, 
     max: 5
 });
-defaultMsgs.alert('This is an <b>alert</b> message!');
-defaultMsgs.success('This is a <b>success</b> message!');
-defaultMsgs.error('This is an <b>error</b> message!');
-defaultMsgs.info('This is an <b>info</b> message!');
+defaultMsgs.alert('This is an &lt;b&gt;alert&lt;/b&gt; message!');
+defaultMsgs.success('This is a &lt;b&gt;success&lt;/b&gt; message!');
+defaultMsgs.error('This is an &lt;b&gt;error&lt;/b&gt; message!');
+defaultMsgs.info('This is an &lt;b&gt;info&lt;/b&gt; message!');
 defaultMsgs.hideAll();
         </pre>
 
@@ -142,10 +142,10 @@ const floatingMsgs = new JnMessageBox({
     closable: false, 
     timeout: 5
 });
-floatingMsgs.alert('This is an <b>alert</b> floating message!');
-floatingMsgs.success('This is a <b>success</b> floating message!');
-floatingMsgs.error('This is an <b>error</b> floating message!');
-floatingMsgs.info('This is an <b>info</b> floating message!');
+floatingMsgs.alert('This is an &lt;b&gt;alert&lt;/b&gt; floating message!');
+floatingMsgs.success('This is a &lt;b&gt;success&lt;/b&gt; floating message!');
+floatingMsgs.error('This is an &lt;b&gt;error&lt;/b&gt; floating message!');
+floatingMsgs.info('This is an &lt;b&gt;info&lt;/b&gt; floating message!');
         </pre>
 
         <h4>Corner Messages</h4>
@@ -154,6 +154,7 @@ floatingMsgs.info('This is an <b>info</b> floating message!');
             <button type="button" class="success" id="cornerSuccessBtn">Success</button>
             <button type="button" class="error" id="cornerErrorBtn">Error</button>
             <button type="button" class="info" id="cornerInfoBtn">Info</button>
+            <button type="button" class="alert" id="cornerCustomBtn">Custom</button>
             <button type="button" id="cornerClearBtn">Clear</button>
             <div id="cornerMsgs"></div>
         </div>
@@ -165,11 +166,12 @@ const cornerMsgs = new JnMessageBox({
     counter: true, 
     max: 3
 });
-cornerMsgs.alert('This is an <b>alert</b> corner message!');
-cornerMsgs.success('This is a <b>success</b> corner message!');
-cornerMsgs.error('This is an <b>error</b> corner message!');
-cornerMsgs.info('This is an <b>info</b> corner message!');
-        </pre>    
+cornerMsgs.alert('This is an &lt;b&gt;alert&lt;/b&gt; corner message!');
+cornerMsgs.success('This is a &lt;b&gt;success&lt;/b&gt; corner message!');
+cornerMsgs.error('This is an &lt;b&gt;error&lt;/b&gt; corner message!');
+cornerMsgs.info('This is an &lt;b&gt;info&lt;/b&gt; corner message!');
+cornerMsgs.alert({text: 'This is an &lt;b&gt;info&lt;/b&gt; message!', closable: false, timeout: 3});
+        </pre>
 
         <h2>JnFixedMessages</h2>
         <table>
@@ -225,10 +227,10 @@ cornerMsgs.info('This is an <b>info</b> corner message!');
         </div>
         <pre>
 const fixedMsgsJson = {
-    "MSA-001": "This is a <u>fixed</u> <b>alert</b> message!",
-    "MSS-001": "This is a <u>fixed</u> <b>success</b> message!",
-    "MSE-001": "This is a <u>fixed</u> <b>error</b> message!",
-    "MSI-001": "This is a <u>fixed</u> <b>info</b> message!"
+    "MSA-001": "This is a &lt;u&gt;fixed&lt;/u&gt; &lt;b&gt;alert&lt;/b&gt; message!",
+    "MSS-001": "This is a &lt;u&gt;fixed&lt;/u&gt; &lt;b&gt;success&lt;/b&gt; message!",
+    "MSE-001": "This is a &lt;u&gt;fixed&lt;/u&gt; &lt;b&gt;error&lt;/b&gt; message!",
+    "MSI-001": "This is a &lt;u&gt;fixed&lt;/u&gt; &lt;b&gt;info</b&gt; message!"
 };
 const fixedMsgs = new JnFixedMessages({
     wrapper: '#fixedMsgs', 

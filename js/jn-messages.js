@@ -94,8 +94,7 @@ class JnMessageBox {
         }
     }
 
-    _handleCounter(text, type)
-    {
+    _handleCounter(text, type) {
         if (this.counter === undefined) {
             return true;
         }
@@ -126,14 +125,41 @@ class JnMessageBox {
         return isNewMessage;
     }
 
-    show(text, type = 'alert') {
+    /**
+     * 
+     * @param {string|json} options Text|Json with options
+     * @param {string} type alert|success|error|info
+     */
+    show(options, type = 'alert') {
+        var text = options;
+        var closable = this.closable;
+        var timeout = this.timeout;
+
+        if (typeof options === 'object') {
+            if (options.text !== undefined) {
+                text = options.text;
+            }
+            if (options.closable !== undefined) {
+                closable = options.closable;
+            }
+            if (options.timeout !== undefined) {
+                timeout = options.timeout;
+            }
+        }
+
+        console.log({
+            text: text,
+            type: type,
+            closable: closable,
+            timeout: timeout
+        });
 
         // cria a nova mensagem
         const message = new JnMessage({
             text: text,
             type: type,
-            closable: this.closable,
-            timeout: this.timeout
+            closable: closable,
+            timeout: timeout
         });
 
         var isNewMessage = this._handleCounter(text, type);
@@ -279,7 +305,7 @@ class JnMessage {
             closeButton.classList.add('close-btn');
 
             closeButton.addEventListener('click', (e) => {
-                e.preventDefault;
+                e.preventDefault();
                 this.hide();
             });
 
