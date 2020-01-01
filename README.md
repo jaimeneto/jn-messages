@@ -89,4 +89,4 @@ msgs.info("INVALID");
 - Inherits all JnMessageBox options
 - **fixedMessages**: JSON containing a list of messages like {code1: text1, code2: text2}
 
-See more on the demo file within the repository
+See more on the demo file within the repository or at the [demo page](http://jaimeneto.com/jn-messages/demo/).
