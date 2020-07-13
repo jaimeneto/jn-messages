@@ -1,5 +1,5 @@
 /*!
- * JnMessages v1.0.0 (https://github.com/jaimeneto/jn-messages)
+ * JnMessages v1.0.1 (https://github.com/jaimeneto/jn-messages)
  * Copyright 2019 Jaime Neto <jaimeneto.com>
  * Licensed under MIT (https://github.com/jaimeneto/jn-messages/blob/master/LICENSE)
  */
@@ -94,7 +94,8 @@ class JnMessageBox {
         }
     }
 
-    _handleCounter(text, type) {
+    _handleCounter(text, type)
+    {
         if (true !== this.counter) {
             return true;
         }
@@ -125,41 +126,14 @@ class JnMessageBox {
         return isNewMessage;
     }
 
-    /**
-     * 
-     * @param {string|json} options Text|Json with options
-     * @param {string} type alert|success|error|info
-     */
-    show(options, type = 'alert') {
-        var text = options;
-        var closable = this.closable;
-        var timeout = this.timeout;
-
-        if (typeof options === 'object') {
-            if (options.text !== undefined) {
-                text = options.text;
-            }
-            if (options.closable !== undefined) {
-                closable = options.closable;
-            }
-            if (options.timeout !== undefined) {
-                timeout = options.timeout;
-            }
-        }
-
-        console.log({
-            text: text,
-            type: type,
-            closable: closable,
-            timeout: timeout
-        });
+    show(text, type = 'alert') {
 
         // cria a nova mensagem
         const message = new JnMessage({
             text: text,
             type: type,
-            closable: closable,
-            timeout: timeout
+            closable: this.closable,
+            timeout: this.timeout
         });
 
         var isNewMessage = this._handleCounter(text, type);
