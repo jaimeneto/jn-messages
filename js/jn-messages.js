@@ -95,7 +95,7 @@ class JnMessageBox {
     }
 
     _handleCounter(text, type) {
-        if (this.counter === undefined) {
+        if (true !== this.counter) {
             return true;
         }
 
